@@ -1,13 +1,24 @@
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
-import Nav from "./components/Nav.jsx";
-import Signup from "./components/Signup.jsx";
-import Login from "./components/Login.jsx";
-
+import SignupPage from "./pages/signupPage.jsx";
+import LoginPage from "./pages/loginPage.jsx";
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/">
+      <Route path="login" index element={<LoginPage />} />
+      <Route path="signup" index element={<SignupPage />} />
+    </Route>
+  )
+);
 function App() {
   return (
     <>
-      <Nav />
-      <Login />
+      <RouterProvider router={router} />
     </>
   );
 }
