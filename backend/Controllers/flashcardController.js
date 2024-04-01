@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Flashcard = require("../Models/flashcardModel");
 // Get a single flashcard
 const getFlashcard = async (req, res) => {
