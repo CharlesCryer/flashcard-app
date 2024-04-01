@@ -15,7 +15,6 @@ const MyCards = () => {
     { title: "card10", description: "description" },
     { title: "card11", description: "description" },
     { title: "card12", description: "description" },
-    { title: "card13", description: "description" },
   ];
   return (
     <>
