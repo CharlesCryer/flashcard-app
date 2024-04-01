@@ -1,28 +1,27 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import "../modules/MyCards.css";
 const MyCards = () => {
-  const cards = [
-    { title: "card1", description: "description" },
-    { title: "card2", description: "description" },
-    { title: "card3", description: "description" },
-    { title: "card4", description: "description" },
-    { title: "card5", description: "description" },
-    { title: "card6", description: "description" },
-    { title: "card7", description: "description" },
-    { title: "card8", description: "description" },
-    { title: "card9", description: "description" },
-    { title: "card10", description: "description" },
-    { title: "card11", description: "description" },
-    { title: "card12", description: "description" },
-  ];
+  const [cards, setCards] = useState([]);
+  useEffect(() => {
+    async function fetchCards() {
+      const response = await fetch("http://localhost:5000/flashcards");
+      const data = await response.json();
+      setCards(data);
+    }
+    fetchCards();
+  }, []);
+
   return (
     <>
-      <section>
-        {cards.map((card) => (
-          <Card title={card.title} description={card.description} />
-        ))}
-      </section>
+      <div className="my-cards-container">
+        <section>
+          {cards.map((card) => (
+            <Card key={card._id} title={card.front} description={card.back} />
+          ))}
+        </section>
+        <button className="add-card-button">Add new flashcard</button>
+      </div>
     </>
   );
 };
