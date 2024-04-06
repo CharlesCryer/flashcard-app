@@ -1,12 +1,7 @@
 import React from "react";
 import "../modules/Card.css";
 import trashIcon from "../assets/icons8-delete.svg";
-const Card = ({
-  id,
-  title = "title",
-  description = "description",
-  handleDelete,
-}) => {
+const Card = ({ id, title = "title", handleDelete }) => {
   return (
     <>
       <div className="card-container">
@@ -20,7 +15,6 @@ const Card = ({
           </span>
           <div className="title-description">
             <h1>{title}</h1>
-            <h3>{description}</h3>
           </div>
         </div>
       </div>

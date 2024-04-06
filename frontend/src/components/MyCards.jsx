@@ -27,8 +27,7 @@ const MyCards = () => {
             <Card
               key={card._id}
               id={card._id}
-              title={card.front}
-              description={card.back}
+              title={card.name}
               handleDelete={deleteCard}
             />
           ))}
