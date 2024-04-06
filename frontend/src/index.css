@@ -6,4 +6,6 @@
 body {
   background-image: linear-gradient(aqua, aliceblue);
   height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

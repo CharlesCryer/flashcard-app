@@ -4,7 +4,39 @@
   padding: 2rem;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 8rem;
+  height: 4rem;
+  overflow: hidden;
+  display: flex;
+}
+.card span {
+  display: none;
+}
+.card:hover span {
+  display: flex;
 }
 .card-container {
   display: flex;
+  overflow: scroll;
+}
+.trash-icon {
+  position: relative;
+  bottom: 1rem;
+  left: 7rem;
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  padding: 0.3rem;
+}
+.trash-icon:hover {
+  border-radius: 100%;
+  background-color: rgb(202, 202, 202);
+  cursor: pointer;
+}
+.trash-icon:active {
+  background-color: rgb(138, 138, 138);
+  cursor: grabbing;
+}
+.title-description {
+  position: absolute;
+  overflow: hidden;
 }

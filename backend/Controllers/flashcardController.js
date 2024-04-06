@@ -29,6 +29,9 @@ const updateFlashcard = async (req, res) => {
 // Delete a flashcard
 const deleteFlashcard = async (req, res) => {
   const id = req.params.id;
+  if (id === undefined) {
+    res.status(400).json("mssg", "error deleting flashcard");
+  }
   const flashcard = await Flashcard.findByIdAndDelete(id);
   res.status(200).json(flashcard);
 };
