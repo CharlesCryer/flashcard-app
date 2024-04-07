@@ -4,11 +4,11 @@ const { Schema } = mongoose;
 const flashcardSchema = new Schema({
   front: {
     type: String,
-    required: true,
+    // required: true,
   },
   back: {
     type: String,
-    required: true,
+    // required: true,
   },
 });
 

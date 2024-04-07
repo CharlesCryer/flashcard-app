@@ -5,11 +5,11 @@ const CreateCardName = () => {
     <>
       <div className="container">
         <div className="create-name-container">
-          <input className="title-input" type="text" placeholder="Title" />
           <input
-            className="description-input"
+            className="title-input"
             type="text"
-            placeholder="Description"
+            placeholder="Title"
+            name="name"
           />
         </div>
       </div>
