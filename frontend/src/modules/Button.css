@@ -10,3 +10,6 @@
 .reusable-button:active {
   background-color: darkcyan;
 }
+.title-container h1 {
+  color: red !important;
+}

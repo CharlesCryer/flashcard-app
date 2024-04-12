@@ -16,7 +16,8 @@ const CreatePage = () => {
     [numberOfComponents]
   );
 
-  // Converts data from form into FormData object which is converted to JSON and sent as POST request via Fetch
+  // Converts data from form into FormData object which is converted
+  // to JSON and sent as POST request via Fetch
   const handleSubmit = (e) => {
     console.log("submitting");
     e.preventDefault();
@@ -28,7 +29,7 @@ const CreatePage = () => {
       flashcards.push({ front: frontValues[i], back: backValues[i] });
     }
     const dataToBeSent = { name: formData.get("name"), flashcards: flashcards };
-    console.log(dataToBeSent);
+    console.log(JSON.stringify(dataToBeSent));
     fetch("http://localhost:5000/flashcards", {
       method: "POST",
       headers: {

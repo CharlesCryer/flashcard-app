@@ -29,6 +29,7 @@ const MyCards = () => {
               id={card._id}
               title={card.name}
               handleDelete={deleteCard}
+              cardLink={`/view/${card._id}`}
             />
           ))}
         </section>

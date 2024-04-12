@@ -1,7 +1,25 @@
-import React from "react";
-
-const Set = () => {
-  return <div>Set</div>;
+import React, { useEffect, useCallback, useState } from "react";
+import Card from "./Card";
+import "../modules/Set.css";
+const Set = ({ setId }) => {
+  const [cards, setCards] = useState([]);
+  const fetchCards = useCallback(async () => {
+    const response = await fetch(`http://localhost:5000/flashcards/${setId}`);
+    const data = Object.values(await response.json());
+    setCards(data[2]);
+  }, []);
+  useEffect(() => {
+    fetchCards();
+  }, []);
+  return (
+    <>
+      <div className="set-container">
+        {cards.map((card) => (
+          <Card title={card.front} key={card._id} />
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Set;

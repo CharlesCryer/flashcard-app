@@ -1,3 +1,7 @@
+a:visited {
+  text-decoration: none;
+  color: black;
+}
 .card {
   background-color: aliceblue;
   margin: 2rem;

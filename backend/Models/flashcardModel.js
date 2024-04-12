@@ -20,4 +20,5 @@ const flashcardSetSchema = new Schema({
   flashcards: [flashcardSchema],
 });
 const FlashcardSet = mongoose.model("FlashcardSet", flashcardSetSchema);
-module.exports = FlashcardSet;
+const Flashcard = mongoose.model("Flashcard", flashcardSchema);
+module.exports = { FlashcardSet, Flashcard };

@@ -4,8 +4,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  background-image: linear-gradient(aqua, aliceblue);
+  background-color: gainsboro;
   height: 100vh;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
