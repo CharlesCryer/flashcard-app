@@ -1,12 +1,12 @@
 import React from "react";
-import "../modules/CreateCardName.css";
+import CreateCardNameStyles from "../modules/CreateCardName.module.css";
 const CreateCardName = () => {
   return (
     <>
-      <div className="container">
-        <div className="create-name-container">
+      <div className={CreateCardNameStyles.container}>
+        <div className={CreateCardNameStyles.create_name_container}>
           <input
-            className="title-input"
+            className={CreateCardNameStyles.title_input}
             type="text"
             placeholder="Title"
             name="name"

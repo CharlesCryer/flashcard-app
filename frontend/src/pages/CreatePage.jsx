@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
 import CreateCard from "../components/CreateCard";
 import CreateCardName from "../components/CreateCardName";
-import "../modules/CreatePage.css";
+import CreatePageStyles from "../modules/CreatePage.module.css";
 import Button from "../components/Button";
 
 const CreatePage = () => {
@@ -48,8 +48,11 @@ const CreatePage = () => {
   return (
     <>
       <Nav />
-      <div className="create-container">
-        <form className="create-set-form" onSubmit={handleSubmit}>
+      <div className={CreatePageStyles.create_container}>
+        <form
+          className={CreatePageStyles.create_set_form}
+          onSubmit={handleSubmit}
+        >
           <CreateCardName />
           {componentsArray.map((index) => (
             <CreateCard key={index} id={index} />

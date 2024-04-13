@@ -1,10 +1,10 @@
 import React from "react";
-import "../modules/Nav.css";
+import NavStyles from "../modules/Nav.module.css";
 
 const Nav = () => {
   return (
     <>
-      <div className="nav-bar">
+      <div className={NavStyles.nav_bar}>
         <h1>Flashcards website</h1>
       </div>
     </>

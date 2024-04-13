@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback, useState } from "react";
 import Card from "./Card";
-import "../modules/Set.css";
+import SetStyles from "../modules/Set.module.css";
 const Set = ({ setId }) => {
   const [cards, setCards] = useState([]);
   const fetchCards = useCallback(async () => {
@@ -13,7 +13,7 @@ const Set = ({ setId }) => {
   }, []);
   return (
     <>
-      <div className="set-container">
+      <div className={SetStyles.set_container}>
         {cards.map((card) => (
           <Card title={card.front} key={card._id} />
         ))}

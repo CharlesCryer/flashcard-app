@@ -1,35 +1,35 @@
 import React from "react";
-import "../modules/Signup.css";
+import SignupStyles from "../modules/Signup.module.css";
 
 const Signup = () => {
   return (
-    <div className="Login-container">
-      <form className="signup-form">
-        <div className="username">
+    <div className={SignupStyles.login_container}>
+      <form className={SignupStyles.signup - form}>
+        <div className={SignupStyles.username}>
           <input
-            id="username"
+            id={SignupStyles[username]}
             type="text"
             placeholder="Username"
             required
           ></input>
         </div>
-        <div className="password">
+        <div className={SignupStyles.password}>
           <input
-            id="password"
+            id={SignupStyles[password]}
             type="password"
             placeholder="Password"
             required
           ></input>
         </div>
-        <div className="confirm-password">
+        <div className={SignupStyles.confirm_password}>
           <input
-            id="confirm-password"
+            id={SignupStyles[confirm_password]}
             type="password"
             placeholder="Confirm password"
             required
           ></input>
         </div>
-        <button id="signup">Sign up</button>
+        <button id={SignupStyles.signup}>Sign up</button>
         <a href="/login">Already have an account?</a>
       </form>
     </div>

@@ -1,9 +1,13 @@
 import React from "react";
-import "../modules/Button.css";
+import ButtonStyles from "../modules/Button.module.css";
 
 const Button = ({ text, type = "text", handleClick }) => {
   return (
-    <button type={type} onClick={handleClick} className="reusable-button">
+    <button
+      type={type}
+      onClick={handleClick}
+      className={ButtonStyles.reusable_button}
+    >
       {text}
     </button>
   );

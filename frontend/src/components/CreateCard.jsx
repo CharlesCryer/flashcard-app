@@ -1,19 +1,19 @@
 import React from "react";
-import "../modules/CreateCard.css";
+import CreateCardStyles from "../modules/CreateCard.module.css";
 const CreateCard = ({ id }) => {
   return (
     <>
-      <div className="container">
-        <div className="create-card-container">
+      <div className={CreateCardStyles.container}>
+        <div className={CreateCardStyles.create_card_container}>
           <input
-            className="front-input"
+            className={CreateCardStyles.front_input}
             name="front"
             type="text"
             placeholder="Front of card"
             key={"front-" + id}
           />
           <input
-            className="back-input"
+            className={CreateCardStyles.back_input}
             name="back"
             type="text"
             placeholder="Back of card"

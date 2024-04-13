@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 import Title from "../components/Title";
 import Set from "../components/Set";
 import Button from "../components/Button";
-import "../modules/ViewPage.css";
+import ViewPageStyles from "../modules/ViewPage.module.css";
 import { useParams } from "react-router-dom";
 const ViewPage = () => {
   const { cardKey } = useParams();
@@ -12,7 +12,7 @@ const ViewPage = () => {
       <Nav />
       <Title title="Example title" />
       <Set setId={cardKey} />
-      <div className="button-container">
+      <div className={ViewPageStyles.button_container}>
         <Button text={"Flashcards"} />
       </div>
     </>

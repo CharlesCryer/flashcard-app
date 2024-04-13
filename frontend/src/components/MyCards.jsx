@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Card from "../components/Card";
-import "../modules/MyCards.css";
+import Button from "../components/Button";
+import MyCardStyles from "../modules/MyCards.module.css";
 const MyCards = () => {
   const [cards, setCards] = useState([]);
   const fetchCards = useCallback(async () => {
@@ -21,8 +22,8 @@ const MyCards = () => {
   };
   return (
     <>
-      <div className="my-cards-container">
-        <section>
+      <div className={MyCardStyles.my_cards_container}>
+        <section className={MyCardStyles.cards}>
           {cards.map((card) => (
             <Card
               key={card._id}
@@ -34,7 +35,7 @@ const MyCards = () => {
           ))}
         </section>
         <a href="/create">
-          <button className="add-card-button">Add new flashcard</button>
+          <Button text={"Add a flashcard set"} />
         </a>
       </div>
     </>
