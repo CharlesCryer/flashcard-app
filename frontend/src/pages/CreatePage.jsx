@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/Nav";
+import Nav from "../components/common/Nav";
 import CreateCard from "../components/CreateCard";
 import CreateCardName from "../components/CreateCardName";
-import CreatePageStyles from "../modules/CreatePage.module.css";
-import Button from "../components/Button";
+import CreatePageStyles from "../modules/pages/CreatePage.module.css";
+import Button from "../components/common/Button";
 
 const CreatePage = () => {
   const navigate = useNavigate();

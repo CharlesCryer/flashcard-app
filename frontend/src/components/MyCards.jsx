@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
-import Card from "../components/Card";
-import Button from "../components/Button";
+import Card from "./common/Card";
+import Button from "./common/Button";
 import MyCardStyles from "../modules/MyCards.module.css";
 const MyCards = () => {
   const [cards, setCards] = useState([]);

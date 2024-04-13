@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState } from "react";
-import Card from "./Card";
+import Card from "./common/Card";
 import SetStyles from "../modules/Set.module.css";
 const Set = ({ setId }) => {
   const [cards, setCards] = useState([]);

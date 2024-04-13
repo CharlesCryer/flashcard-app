@@ -1,9 +1,9 @@
 import React from "react";
-import Nav from "../components/Nav";
-import Title from "../components/Title";
+import Nav from "../components/common/Nav";
+import Title from "../components/common/Title";
 import Set from "../components/Set";
-import Button from "../components/Button";
-import ViewPageStyles from "../modules/ViewPage.module.css";
+import Button from "../components/common/Button";
+import ViewPageStyles from "../modules/pages/ViewPage.module.css";
 import { useParams } from "react-router-dom";
 const ViewPage = () => {
   const { cardKey } = useParams();

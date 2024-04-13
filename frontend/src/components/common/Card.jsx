@@ -1,6 +1,6 @@
 import React from "react";
-import CardStyles from "../modules/Card.module.css";
-import trashIcon from "../assets/icons8-delete.svg";
+import CardStyles from "../../modules/common/Card.module.css";
+import trashIcon from "../../assets/icons8-delete.svg";
 import { Link } from "react-router-dom";
 const Card = ({ id, title = "title", handleDelete, cardLink }) => {
   return (
