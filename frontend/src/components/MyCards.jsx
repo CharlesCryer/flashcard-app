@@ -31,6 +31,7 @@ const MyCards = () => {
               title={card.name}
               handleDelete={deleteCard}
               cardLink={`/view/${card._id}`}
+              navigatesToSet={true}
             />
           ))}
         </section>
