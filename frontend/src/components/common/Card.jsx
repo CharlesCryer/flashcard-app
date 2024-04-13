@@ -12,7 +12,7 @@ const Card = ({
     useState(navigatesToSet);
   const navigate = useNavigate();
   const handleNavigate = () => {
-    if (navigatesToSetState == true) navigate(`/view/${id}`);
+    if (navigatesToSetState == true) navigate(`/edit/${id}`);
   };
   return (
     <>

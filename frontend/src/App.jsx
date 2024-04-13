@@ -9,7 +9,7 @@ import SignupPage from "./pages/SignupPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CreatePage from "./pages/CreatePage.jsx";
-import ViewPage from "./pages/ViewPage.jsx";
+import EditPage from "./pages/EditPage.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
@@ -17,7 +17,7 @@ const router = createBrowserRouter(
       <Route path="login" index element={<LoginPage />} />
       <Route path="signup" index element={<SignupPage />} />
       <Route path="create" index element={<CreatePage />} />
-      <Route path="view/:cardKey" index element={<ViewPage />} />
+      <Route path="edit/:cardKey" index element={<EditPage />} />
     </Route>
   )
 );
