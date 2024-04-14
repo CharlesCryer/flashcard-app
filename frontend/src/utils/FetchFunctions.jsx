@@ -15,7 +15,6 @@ export async function getCardSets() {
   try {
     const response = await fetch("http://localhost:5000/flashcards");
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (err) {
     console.log(err);
