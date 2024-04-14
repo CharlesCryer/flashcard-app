@@ -3,15 +3,18 @@ import IndividualCard from "./common/IndividualCard";
 import SetStyles from "../modules/Set.module.css";
 import Title from "./common/Title";
 import Button from "./common/Button";
+import { getCardSet } from "../utils/FetchFunctions";
 const Set = ({ setId }) => {
   const [cards, setCards] = useState([]);
   const [name, setName] = useState("");
-  const fetchCards = useCallback(async () => {
-    const response = await fetch(`http://localhost:5000/flashcards/${setId}`);
-    const data = Object.values(await response.json());
-    setName(data[1]);
-    setCards(data[2]);
-  }, []);
+
+  const fetchCards = useCallback(() =>
+    getCardSet(setId).then(({ name, flashcards }) => {
+      setCards(flashcards);
+      setName(name);
+    })
+  );
+
   useEffect(() => {
     fetchCards();
   }, []);

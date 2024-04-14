@@ -5,6 +5,7 @@ import CreateCard from "../components/CreateCard";
 import CreateCardName from "../components/CreateCardName";
 import CreatePageStyles from "../modules/pages/CreatePage.module.css";
 import Button from "../components/common/Button";
+import { postCard } from "../utils/FetchFunctions";
 
 const CreatePage = () => {
   const navigate = useNavigate();
@@ -16,35 +17,15 @@ const CreatePage = () => {
     [numberOfComponents]
   );
 
-  // Converts data from form into FormData object which is converted
-  // to JSON and sent as POST request via Fetch
   const handleSubmit = (e) => {
     console.log("submitting");
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const flashcards = [];
-    const frontValues = formData.getAll("front");
-    const backValues = formData.getAll("back");
-    for (let i = 0; i < frontValues.length; i++) {
-      flashcards.push({ front: frontValues[i], back: backValues[i] });
-    }
-    const dataToBeSent = { name: formData.get("name"), flashcards: flashcards };
-    console.log(JSON.stringify(dataToBeSent));
-    fetch("http://localhost:5000/flashcards", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataToBeSent),
-    })
-      .then(() => {
-        console.log("Set added");
-        navigate("/");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    postCard(formData)
+      .then(navigate("/"))
+      .catch((err) => console.log(err));
   };
+
   return (
     <>
       <Nav />
