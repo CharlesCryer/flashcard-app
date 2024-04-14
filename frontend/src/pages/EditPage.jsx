@@ -1,8 +1,9 @@
 import React from "react";
 import Nav from "../components/common/Nav";
 import Set from "../components/Set";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 const EditPage = () => {
+  const navigate = useNavigate();
   const { cardKey } = useParams();
   const handleSubmit = (e) => {
     console.log("submitting");
@@ -22,6 +23,9 @@ const EditPage = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(dataToBeSent),
+    }).then(() => {
+      console.log(`${dataToBeSent.name}: ${cardKey} updated`);
+      navigate("/");
     });
   };
   return (
