@@ -13,6 +13,7 @@ function convertToSchema(formData) {
 // Gets all sets of flashcards and returns data in a promise
 export async function getCardSets() {
   try {
+    console.log("Getting all flashcards...");
     const response = await fetch("http://localhost:5000/flashcards");
     const data = await response.json();
     return data;
@@ -23,6 +24,7 @@ export async function getCardSets() {
 // Gets a single set of flashcards and returns data inside of a promise
 export async function getCardSet(cardKey) {
   try {
+    console.log("Getting flashcard set...");
     const response = await fetch(`http://localhost:5000/flashcards/${cardKey}`);
     const data = await response.json();
     return data;
@@ -68,5 +70,6 @@ export async function deleteCards(cardKey) {
     method: "DELETE",
   });
   const data = await response.json();
+  console.log("Set deleted");
   return data;
 }
