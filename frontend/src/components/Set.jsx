@@ -36,11 +36,7 @@ const Set = ({ setId }) => {
       </div>
       <div className={SetStyles.buttons_container}>
         <Button text={"Apply changes"} type="submit" />
-        <Button
-          text={"Add flashcard"}
-          type="button"
-          handleClick={() => addCard()}
-        />
+        <Button text={"Add flashcard"} type="button" handleClick={addCard} />
       </div>
     </>
   );

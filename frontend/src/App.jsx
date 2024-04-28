@@ -10,6 +10,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CreatePage from "./pages/CreatePage.jsx";
 import EditPage from "./pages/EditPage.jsx";
+import RunPage from "./pages/RunPage.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="signup" index element={<SignupPage />} />
       <Route path="create" index element={<CreatePage />} />
       <Route path="edit/:cardKey" index element={<EditPage />} />
+      <Route path="run/:cardKey" index element={<RunPage />} />
     </Route>
   )
 );

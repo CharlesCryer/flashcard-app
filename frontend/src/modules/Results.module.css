@@ -1,0 +1,20 @@
+.results_container {
+  display: flex;
+  justify-content: center;
+}
+.results_card {
+  padding-top: 1rem;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: rgb(185, 185, 185);
+  transition: 0.2s;
+}
+button:active {
+  background-color: gray;
+}

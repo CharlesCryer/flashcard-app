@@ -2,17 +2,11 @@ import React, { useState } from "react";
 import CardStyles from "../../modules/common/Card.module.css";
 import trashIcon from "../../assets/icons8-delete.svg";
 import { useNavigate } from "react-router-dom";
-const Card = ({
-  id,
-  title = "title",
-  handleDelete,
-  navigatesToSet = false,
-}) => {
-  const [navigatesToSetState, setNavigatesToSetState] =
-    useState(navigatesToSet);
+const Card = ({ id, title = "title", handleDelete }) => {
+  const [navigatesToSetState, setNavigatesToSetState] = useState(true);
   const navigate = useNavigate();
   const handleNavigate = () => {
-    if (navigatesToSetState == true) navigate(`/edit/${id}`);
+    if (navigatesToSetState == true) navigate(`/run/${id}`);
   };
   return (
     <>

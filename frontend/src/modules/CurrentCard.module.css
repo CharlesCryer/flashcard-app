@@ -1,0 +1,16 @@
+.current_card_container {
+  margin: 5rem 5rem 0rem 5rem;
+  display: block;
+}
+.current_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 15rem 0rem;
+}
+.current_card h2 {
+  font-size: 3rem;
+}
