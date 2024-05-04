@@ -1,0 +1,18 @@
+.card {
+  background-color: aliceblue;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 8rem;
+  height: 4rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card_container {
+  display: flex;
+  overflow: hidden;
+}

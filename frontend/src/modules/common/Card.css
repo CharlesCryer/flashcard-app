@@ -1,0 +1,51 @@
+a {
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+.card {
+  background-color: aliceblue;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 8rem;
+  height: 4rem;
+  overflow: hidden;
+  display: flex;
+}
+.card span {
+  display: none;
+}
+.card:hover span {
+  display: flex;
+}
+.card_container {
+  display: flex;
+  overflow: hidden;
+}
+.trash_icon {
+  position: relative;
+  bottom: 1rem;
+  left: 7rem;
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  padding: 0.3rem;
+}
+.trash_icon:hover {
+  border-radius: 100%;
+  background-color: rgb(202, 202, 202);
+  cursor: pointer;
+}
+.trash_icon:active {
+  background-color: rgb(138, 138, 138);
+  cursor: grabbing;
+}
+.title {
+  position: absolute;
+  overflow: hidden;
+}

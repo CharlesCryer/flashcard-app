@@ -1,0 +1,42 @@
+.button_container {
+  display: flex;
+  justify-content: center;
+}
+button {
+  border-radius: 10px;
+}
+.previous_button {
+  display: flex;
+  justify-content: center;
+}
+.previous {
+  background-color: rgb(143, 143, 143);
+}
+.previous:hover {
+  background-color: gray;
+}
+.previous:active {
+  background-color: rgb(143, 143, 143);
+}
+.correct {
+  border: 1px solid green;
+}
+.correct:hover {
+  background-color: green;
+  transition: 0.3s ease;
+}
+.correct:active {
+  background-color: rgb(0, 105, 0);
+  border-color: rgb(0, 105, 0);
+}
+.incorrect {
+  border: 1px solid rgb(170, 1, 1);
+}
+.incorrect:hover {
+  background-color: rgb(170, 1, 1);
+  transition: 0.3s ease;
+}
+.incorrect:active {
+  background-color: rgb(147, 0, 0);
+  border-color: rgb(147, 1, 1);
+}

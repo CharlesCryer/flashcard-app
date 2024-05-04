@@ -1,0 +1,12 @@
+.reusable_button {
+  border-radius: 10px;
+  border: none;
+  background-color: darkcyan;
+}
+.reusable_button:hover {
+  background-color: rgb(0, 194, 194);
+  transition: background-color 0.5s ease;
+}
+.reusable_button:active {
+  background-color: darkcyan;
+}
