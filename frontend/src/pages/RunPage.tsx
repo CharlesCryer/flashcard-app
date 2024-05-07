@@ -28,7 +28,7 @@ const RunPage: FC = () => {
       .catch((err) => console.log(err));
   };
   // Running fetch cards on mount
-  useEffect(fetchCards, []);
+  useEffect(fetchCards);
 
   // updating states once cards are fetched
   useEffect(() => {

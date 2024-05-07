@@ -16,12 +16,12 @@ const Set: FC<{ setId: string }> = ({ setId }) => {
         setCards(flashcards);
         setName(name);
       }),
-    []
+    [setId]
   );
 
   useEffect(() => {
     fetchCards();
-  }, []);
+  });
   const addCard = () => {
     setCards([...cards, { front: "", back: "" }]);
     console.log(cards);
