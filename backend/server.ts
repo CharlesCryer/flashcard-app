@@ -14,10 +14,12 @@ app.use((req: Request, res: Response, next) => {
   console.log(req.method, req.path);
   next();
 });
+
 //Routes
 import flashcardRouter from "./routes/flashcardRoutes";
-
 app.use("/flashcards", flashcardRouter);
+import loginRouter from "./routes/loginRoutes";
+app.use("/login", loginRouter);
 
 // Connecting to DB and listening on PORT
 const PORT = process.env.PORT || 3000;

@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import { Schema, model } from "mongoose";
 
 export interface FlashcardSetType {
   name: string;
@@ -28,5 +27,4 @@ const flashcardSetSchema = new Schema<FlashcardSetType>({
   },
   flashcards: [flashcardSchema],
 });
-export const FlashcardSet = mongoose.model("FlashcardSet", flashcardSetSchema);
-export const Flashcard = mongoose.model("Flashcard", flashcardSchema);
+export const FlashcardSet = model("FlashcardSet", flashcardSetSchema);

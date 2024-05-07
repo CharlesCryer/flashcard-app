@@ -1,12 +1,11 @@
-import {
-  Flashcard,
-  FlashcardSet,
-  FlashcardSetType,
-} from "../Models/flashcardModel";
+import { FlashcardSet, FlashcardSetType } from "../Models/flashcardModel";
 import { Request, Response } from "express";
 
 // Get a single flashcard set
-const getFlashcard = async (req: Request, res: Response): Promise<void> => {
+export const getFlashcard = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const id: string = req.params.id;
     const flashcardSet: FlashcardSetType | null = await FlashcardSet.findOne({
@@ -23,7 +22,10 @@ const getFlashcard = async (req: Request, res: Response): Promise<void> => {
   }
 };
 // Get all flashcard sets
-const getFlashcards = async (req: Request, res: Response): Promise<void> => {
+export const getFlashcards = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const flashcardSet: FlashcardSetType[] = await FlashcardSet.find({});
     res.status(200).json(flashcardSet);
@@ -33,10 +35,12 @@ const getFlashcards = async (req: Request, res: Response): Promise<void> => {
   }
 };
 // Create a flashcard set
-const createFlashcard = async (req: Request, res: Response): Promise<void> => {
+export const createFlashcard = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const { name, flashcards: flashcards }: FlashcardSetType = req.body;
-    console.log(flashcards);
     const flashcard: FlashcardSetType = await FlashcardSet.create({
       name,
       flashcards: flashcards,
@@ -48,7 +52,10 @@ const createFlashcard = async (req: Request, res: Response): Promise<void> => {
   }
 };
 // Update a flashcard set
-const updateFlashcard = async (req: Request, res: Response): Promise<void> => {
+export const updateFlashcard = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const id: string = req.params.id;
     const { name, flashcards: flashcards }: FlashcardSetType = req.body;
@@ -69,7 +76,10 @@ const updateFlashcard = async (req: Request, res: Response): Promise<void> => {
   }
 };
 // Delete a flashcard set
-const deleteFlashcard = async (req: Request, res: Response): Promise<void> => {
+export const deleteFlashcard = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const id: string = req.params.id;
     const flashcard: FlashcardSetType | null =
@@ -83,11 +93,4 @@ const deleteFlashcard = async (req: Request, res: Response): Promise<void> => {
     console.log(err);
     res.status(400).json({ err: err });
   }
-};
-export default {
-  getFlashcard,
-  getFlashcards,
-  createFlashcard,
-  updateFlashcard,
-  deleteFlashcard,
 };
