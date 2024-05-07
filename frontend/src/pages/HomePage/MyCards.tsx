@@ -1,9 +1,9 @@
 import { useEffect, useState, useCallback, FC } from "react";
-import Card from "./common/Card";
-import Button from "./common/Button";
-import "../modules/MyCards.css";
-import { deleteCards, getCardSets } from "../utils/FetchFunctions";
-import { cards } from "../utils/types";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
+import "./styles/MyCards.css";
+import { deleteCards, getCardSets } from "../../utils/FetchFunctions";
+import { cards } from "../../utils/types";
 
 const MyCards: FC = () => {
   const [cards, setCards] = useState<cards[]>([]);

@@ -5,11 +5,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import SignupPage from "./pages/SignupPage.jsx";
-import LoginPage from "./pages/LoginPage.jsx";
-import HomePage from "./pages/HomePage.jsx";
-import CreatePage from "./pages/CreatePage.js";
-import RunPage from "./pages/RunPage.jsx";
+import SignupPage from "./pages/SignupPage/SignupPage.js";
+import LoginPage from "./pages/LoginPage/LoginPage.js";
+import HomePage from "./pages/HomePage/HomePage.js";
+import CreatePage from "./pages/CreatePage/CreatePage.js";
+import RunPage from "./pages/RunPage/RunPage.js";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "../../modules/common/Button.css";
+import "../modules/Button.css";
 interface propTypes {
   text: string;
   type?: "submit" | "reset" | "button" | undefined;

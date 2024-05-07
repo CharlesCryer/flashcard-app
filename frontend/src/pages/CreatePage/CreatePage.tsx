@@ -1,11 +1,11 @@
-import Nav from "../components/common/Nav";
-import IndividualCard from "../components/common/IndividualCard";
-import Button from "../components/common/Button";
+import Nav from "../../components/Nav";
+import InputCard from "./InputCard";
+import Button from "../../components/Button";
 import { FC, FormEvent, useCallback, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { patchCard, postCard, getCardSet } from "../utils/FetchFunctions";
-import { cards } from "../utils/types";
-import "../modules/pages/CreatePage.css";
+import { patchCard, postCard, getCardSet } from "../../utils/FetchFunctions";
+import { cards } from "../../utils/types";
+import "./styles/CreatePage.css";
 const EditPage: FC = () => {
   const navigate = useNavigate();
   const { cardKey } = useParams();
@@ -60,7 +60,7 @@ const EditPage: FC = () => {
         </div>
         <div className={"set_container"}>
           {cards.map((card) => (
-            <IndividualCard
+            <InputCard
               front={card.front}
               back={card.back}
               key={cards.indexOf(card)}

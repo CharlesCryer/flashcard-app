@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from "react";
-import Nav from "../components/common/Nav";
-import CurrentCard from "../components/CurrentCard";
+import Nav from "../../components/Nav";
+import TestCard from "./TestCard";
 import { useParams } from "react-router-dom";
-import { getCardSet } from "../utils/FetchFunctions";
-import "../modules/pages/RunPage.css";
-import Results from "../components/Results";
-import { cards } from "../utils/types";
+import { getCardSet } from "../../utils/FetchFunctions";
+import "./styles/RunPage.css";
+import Results from "./Results";
+import { cards } from "../../utils/types";
 
 const RunPage: FC = () => {
   const { cardKey } = useParams();
@@ -71,7 +71,7 @@ const RunPage: FC = () => {
     return (
       <>
         <Nav />
-        <CurrentCard display={currentDisplay} handleClick={showOtherSide} />
+        <TestCard display={currentDisplay} handleClick={showOtherSide} />
         <div className={"button_container"}>
           <button
             type="button"

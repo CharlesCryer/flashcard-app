@@ -1,11 +1,11 @@
 import { FC } from "react";
-import "../../modules/common/IndividualCard.css";
+import "./styles/InputCard.css";
 
 interface propTypes {
   front: string;
   back: string;
 }
-const IndividualCard: FC<propTypes> = ({ front, back }) => {
+const InputCard: FC<propTypes> = ({ front, back }) => {
   return (
     <>
       <div className={"card_container"}>
@@ -30,4 +30,4 @@ const IndividualCard: FC<propTypes> = ({ front, back }) => {
   );
 };
 
-export default IndividualCard;
+export default InputCard;

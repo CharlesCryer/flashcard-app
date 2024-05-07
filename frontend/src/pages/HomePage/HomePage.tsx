@@ -1,6 +1,6 @@
 import { FC } from "react";
-import Nav from "../components/common/Nav";
-import MyCards from "../components/MyCards";
+import Nav from "../../components/Nav";
+import MyCards from "./MyCards";
 
 const HomePage: FC = () => {
   return (

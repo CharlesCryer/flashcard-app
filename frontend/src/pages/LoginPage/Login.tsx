@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "../modules/Login.css";
+import "./styles/Login.css";
 
 const Login: FC = () => {
   return (

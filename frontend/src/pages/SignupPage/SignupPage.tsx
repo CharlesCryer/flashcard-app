@@ -1,6 +1,6 @@
 import { FC } from "react";
-import Nav from "../components/common/Nav";
-import Signup from "../components/Signup";
+import Nav from "../../components/Nav";
+import Signup from "./Signup";
 const signupPage: FC = () => {
   return (
     <>

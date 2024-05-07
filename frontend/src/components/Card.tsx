@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
-import "../../modules/common/Card.css";
-import trashIcon from "../../assets/icons8-delete.svg";
+import "../modules/Card.css";
+import trashIcon from "../assets/icons8-delete.svg";
 import { useNavigate } from "react-router-dom";
 
 interface propTypes {

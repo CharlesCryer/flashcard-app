@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "../../modules/common/Nav.css";
+import "../modules/Nav.css";
 import { Link } from "react-router-dom";
 
 const Nav: FC = () => {

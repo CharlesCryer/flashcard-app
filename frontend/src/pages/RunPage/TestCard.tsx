@@ -1,11 +1,11 @@
 import { FC } from "react";
-import "../modules/CurrentCard.css";
+import "./styles/TestCard.css";
 
 interface propTypes {
   display: string;
   handleClick: () => void;
 }
-const CurrentCard: FC<propTypes> = ({ display, handleClick }) => {
+const TestCard: FC<propTypes> = ({ display, handleClick }) => {
   return (
     <>
       <div className={"current_card_container"} onClick={handleClick}>
@@ -19,4 +19,4 @@ const CurrentCard: FC<propTypes> = ({ display, handleClick }) => {
   );
 };
 
-export default CurrentCard;
+export default TestCard;

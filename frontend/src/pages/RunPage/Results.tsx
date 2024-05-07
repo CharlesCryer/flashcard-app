@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import "../modules/Results.css";
+import "./styles/Results.css";
 import { FC } from "react";
 
 interface propTypes {
