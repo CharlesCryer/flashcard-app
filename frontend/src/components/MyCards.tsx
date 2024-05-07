@@ -29,7 +29,7 @@ const MyCards: FC = () => {
   };
   useEffect(() => {
     fetchCards();
-  });
+  }, []);
 
   return (
     <>

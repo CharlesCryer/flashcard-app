@@ -8,8 +8,7 @@ import "./App.css";
 import SignupPage from "./pages/SignupPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import CreatePage from "./pages/CreatePage.jsx";
-import EditPage from "./pages/EditPage.jsx";
+import CreatePage from "./pages/CreatePage.js";
 import RunPage from "./pages/RunPage.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,7 +17,7 @@ const router = createBrowserRouter(
       <Route path="login" index element={<LoginPage />} />
       <Route path="signup" index element={<SignupPage />} />
       <Route path="create" index element={<CreatePage />} />
-      <Route path="edit/:cardKey" index element={<EditPage />} />
+      <Route path="edit/:cardKey" index element={<CreatePage />} />
       <Route path="run/:cardKey" index element={<RunPage />} />
     </Route>
   )
