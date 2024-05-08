@@ -9,6 +9,8 @@ interface propTypes {
   handleDelete: () => void;
 }
 const Card: FC<propTypes> = ({ id, title = "title", handleDelete }) => {
+  // Card only works as a link if navigatesToSetState is true and
+  // is set to false when the cursor is over the delete button
   const [navigatesToSetState, setNavigatesToSetState] = useState(true);
   const navigate = useNavigate();
   const handleNavigate = () => {

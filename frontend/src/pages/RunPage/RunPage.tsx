@@ -8,17 +8,12 @@ import Results from "./Results";
 import { cards } from "../../utils/types";
 
 const RunPage: FC = () => {
-  const { cardKey } = useParams();
-  const [cards, setCards] = useState<cards["flashcards"]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentCard, setCurrentCard] = useState<{
-    front: string | null;
-    back: string | null;
-  }>({ front: null, back: null });
-  const [currentDisplay, setCurrentDisplay] = useState("");
-  const [isFront, setIsFront] = useState(true);
-  const [correctCards, setCorrectCards] = useState(0);
-  const [finished, setFinished] = useState(false);
+  const { cardKey } = useParams(); // Id from URL
+  const [cards, setCards] = useState<cards["flashcards"]>([]); // Array of objects {"front", "back"}
+  const [currentIndex, setCurrentIndex] = useState(0); // Index of cards array
+  const [displayFront, setDisplayFront] = useState(true); // If the front of the card is currently being displayed then true
+  const [correctCards, setCorrectCards] = useState(0); // Counter for correct answers
+  const [finished, setFinished] = useState(false); // State for whether or not the set is finished
   const fetchCards = () => {
     if (!cardKey) return;
     getCardSet(cardKey)
@@ -29,16 +24,6 @@ const RunPage: FC = () => {
   };
   // Running fetch cards on mount
   useEffect(() => fetchCards(), []);
-
-  // updating states once cards are fetched
-  useEffect(() => {
-    if (cards.length != 0) setCurrentCard(cards[currentIndex]);
-  }, [cards, currentIndex]);
-
-  // Updating the part of the card to be displayed as the front
-  useEffect(() => {
-    if (currentCard.front) setCurrentDisplay(currentCard.front);
-  }, [currentCard]);
 
   // handle/onClick functions
   const nextCard = (isCorrect: boolean) => {
@@ -55,23 +40,24 @@ const RunPage: FC = () => {
     }
   };
   const showOtherSide = () => {
-    if (!currentCard.front || !currentCard.back) return null;
-    if (!isFront) {
-      setCurrentDisplay(currentCard.front);
-      setIsFront(true);
+    if (!displayFront) {
+      setDisplayFront(true);
     } else {
-      setCurrentDisplay(currentCard.back);
-      setIsFront(false);
+      setDisplayFront(false);
     }
   };
-  if (!cardKey) {
-    return <h1>404 Could not get set</h1>;
-  }
+  if (!cardKey) return <h1>404 Could not get set</h1>;
+  if (cards.length == 0) return <h1>loading</h1>;
   if (!finished)
     return (
       <>
         <Nav />
-        <TestCard display={currentDisplay} handleClick={showOtherSide} />
+        <TestCard
+          display={
+            displayFront ? cards[currentIndex].front : cards[currentIndex].back
+          }
+          handleClick={showOtherSide}
+        />
         <div className={"button_container"}>
           <button
             type="button"
